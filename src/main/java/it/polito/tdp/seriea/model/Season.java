@@ -1,14 +1,32 @@
 package it.polito.tdp.seriea.model;
 
-public class Season {
+public class Season implements Comparable<Season>{
+	
 	private int season;
 	private String description;
+	//sono i punti della squadra selezionata
+	private int puntiSquadra;
 
 	public Season(int season, String description) {
 		super();
 		this.season = season;
 		this.description = description;
+		puntiSquadra=0;
 	}
+	
+	
+
+	public int getPuntiSquadra() {
+		return puntiSquadra;
+	}
+
+
+
+	public void setPuntiSquadra(int puntiSquadra) {
+		this.puntiSquadra = puntiSquadra;
+	}
+
+
 
 	/**
 	 * @return the season
@@ -80,6 +98,14 @@ public class Season {
 	@Override
 	public String toString() {
 		return description;
+	}
+
+
+
+	@Override
+	public int compareTo(Season o) {
+		// TODO Auto-generated method stub
+		return this.getSeason()-o.getSeason();
 	}
 
 }
